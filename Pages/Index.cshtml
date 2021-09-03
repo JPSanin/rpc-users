@@ -5,6 +5,27 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">RPC : Red de programacion competitiva</h1>
+    
+    <form method="post">
+        <div class="form-group">
+            <label class="control-label">Username</label>
+            <input class="form-control" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Password</label>
+            <input class="form-control" type="password" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="SIGN IN" class="btn btn-primary"  asp-page="./Users/Index"/>
+        </div>
+        <label>New User</label>
+        <div>
+            <input type="button" value="SIGN IN" asp-page="./Users/Create"/>
+            <a asp-page="./Users/Create">Create New</a>
+        </div>
+    </form>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
