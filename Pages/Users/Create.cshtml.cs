@@ -24,6 +24,7 @@ namespace RpcUsers.Pages.Users
             return Page();
         }
 
+
         [BindProperty]
         public User User { get; set; }
 
@@ -40,5 +41,7 @@ namespace RpcUsers.Pages.Users
 
             return RedirectToPage("./Index");
         }
+
+    
     }
 }
