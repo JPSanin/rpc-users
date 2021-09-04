@@ -5,26 +5,29 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">RPC : Red de programacion competitiva</h1>
-    
+    <div>
+        <img src="https://pbs.twimg.com/profile_images/493847405670850561/qslkfHlq_400x400.jpeg" width="100" height="100" />
+        <h1 class="display-4">RPC : Red de programacion competitiva</h1>
+    </div>
     <form method="post">
-        <div class="form-group">
-            <label class="control-label">Username</label>
-            <input class="form-control" />
-            <span class="text-danger"></span>
+        <div class="containerSingIn">
+            <div class="form-group">
+                <label class="control-label">Username</label>
+                <input class="form-control" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input class="form-control" type="password" />
+                <span class="text-danger"></span>
+            </div>
         </div>
         <div class="form-group">
-            <label class="control-label">Password</label>
-            <input class="form-control" type="password" />
-            <span class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" value="SIGN IN" class="btn btn-primary"  asp-page="./Users/Index"/>
+            <input type="submit" value="SIGN IN" class="btn btn-primary" asp-page="./Users/Index" />
         </div>
         <label>New User</label>
         <div>
-            <input type="button" value="SIGN IN" asp-page="./Users/Create"/>
-            <a asp-page="./Users/Create">Create New</a>
+            <button class="btn btn-primary" asp-page="./Users/Create">SIGN UP</button>
         </div>
     </form>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
