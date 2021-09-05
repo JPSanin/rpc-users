@@ -27,18 +27,22 @@ namespace Rpc.Models
         public int ID { get; set; }
 
         [Required]
+        [StringLength(60, MinimumLength = 8)]
         public string Username { get; set; }
         [Required]
+        [StringLength(60, MinimumLength = 8)]
         public string Password { get; set; }
 
         [Compare("Password", ErrorMessage = "Confirm password doesn't match, Type again !")]
         public string ConfirmPassword { get; set; }
         [Display(Name = "First Name")]
         [Required]
+        [StringLength(60, MinimumLength = 2)]
         public string Firstname { get; set; }
 
         [Display(Name = "Last Name")]
         [Required]
+        [StringLength(60, MinimumLength = 2)]
         public string Lastname { get; set; }
 
         [Display(Name = "Birth Date")]

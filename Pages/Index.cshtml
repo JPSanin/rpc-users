@@ -9,21 +9,21 @@
         <img src="https://pbs.twimg.com/profile_images/493847405670850561/qslkfHlq_400x400.jpeg" width="100" height="100" />
         <h1 class="display-4">RPC : Red de programacion competitiva</h1>
     </div>
-    <form method="post">
+    <form method="get">
         <div class="containerSingIn">
             <div class="form-group">
                 <label class="control-label">Username</label>
-                <input class="form-control" />
+                <input asp-for="UserID" class="form-control" />
                 <span class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label">Password</label>
-                <input class="form-control" type="password" />
+                <input asp-for="Password" type="password" class="form-control"/>
                 <span class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
-            <input type="submit" value="SIGN IN" class="btn btn-primary" asp-page="./Users/Index" />
+            <input type="submit" value="SIGN IN" class="btn btn-primary" />
         </div>
         <label>New User</label>
         <div>
