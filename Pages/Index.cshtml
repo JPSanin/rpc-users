@@ -4,12 +4,20 @@
     ViewData["Title"] = "Home page";
 }
 
+
+
 <div class="text-center">
     <div>
         <img src="https://pbs.twimg.com/profile_images/493847405670850561/qslkfHlq_400x400.jpeg" width="100" height="100" />
         <h1 class="display-4">RPC : Red de programacion competitiva</h1>
+        @if (Model.FieldEmpty) {
+            <div class="alert alert-warning">No pueden haber campos vacios</div>
+        } else if (!Model.UserExist) { 
+            <div class="alert alert-info">El usuario o contraseña son incorrectos</div>
+        }
+
     </div>
-    <form method="get">
+    <form method="post">
         <div class="containerSingIn">
             <div class="form-group">
                 <label class="control-label">Username</label>

@@ -16,14 +16,18 @@ namespace RpcUsers.Pages
         private readonly RpcUsers.Data.RpcUsersContext _context;
 
         [BindProperty(SupportsGet = true)]
-        public String UserID { get; set;}
+        public String UserID { get; set; }
         [BindProperty(SupportsGet = true)]
-        public String Password { get; set;}
+        public String Password { get; set; }
+        public bool FieldEmpty { get; set; }
+        public bool UserExist { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, RpcUsers.Data.RpcUsersContext context)
         {
             _logger = logger;
             _context = context;
+            FieldEmpty = false;
+            UserExist = true;
         }
 
         /*public void OnGet()
@@ -31,21 +35,32 @@ namespace RpcUsers.Pages
             Console.WriteLine("Usuario: " + UserID + "\nPassword: " + Password);
         }*/
 
-        public async Task<IActionResult> OnGetAsync() {
-            Console.WriteLine("Usuario: " + UserID + "\nPassword: " + Password);
+        /*public async Task<IActionResult> OnGetAsync() {
+            //Console.WriteLine("Usuario: " + UserID + "\nPassword: " + Password);
+
+        }*/
+
+        public async Task<IActionResult> OnPost()
+        {
+            FieldEmpty = false;
+            UserExist = true;
 
             if (UserID != null && Password != null)
             {
                 var dataBaseUser = _context.User.FirstOrDefault(u => u.Username == UserID && u.Password == Password);
-                if (dataBaseUser is null) {
+                if (dataBaseUser is null)
+                {
+                    UserExist = false;
                     return Page();
                 }
-                else {
+                else
+                {
                     return RedirectToPage("./Users/Index");
                 }
             }
             else
             {
+                FieldEmpty = true;
                 return Page();
             }
         }
